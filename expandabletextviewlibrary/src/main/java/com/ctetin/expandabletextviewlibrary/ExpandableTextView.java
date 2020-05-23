@@ -329,7 +329,7 @@ public class ExpandableTextView extends AppCompatTextView {
      *
      * @param content
      */
-    public void setContent(final String content) {
+    public void setContent(final CharSequence content) {
         mContent = content;
         if (isAttached)
             doSetContent();
@@ -357,11 +357,11 @@ public class ExpandableTextView extends AppCompatTextView {
                 @Override
                 public void run() {
                     retryTime++;
-                    setContent(mContent.toString());
+                    setContent(mContent);
                 }
             });
         } else {
-            setRealContent(mContent.toString());
+            setRealContent(mContent);
         }
     }
 
